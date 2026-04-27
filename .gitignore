@@ -1,0 +1,67 @@
+# Secrets
+.env
+.env.*
+!.env.example
+credentials.json
+token.json
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Local AI / agent / private workflow files
+CLAUDE.md
+AGENTS.md
+.codex/
+workflows/
+References.txt
+
+# Temporary and scratch files
+.tmp/
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.log
+
+# Editor / IDE
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.pytest_cache/
+.mypy_cache/
+
+# Node / package managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Unused large/source dictionaries
+words_alpha.txt
+
+# Build/output folders
+dist/
+build/
+out/
+coverage/

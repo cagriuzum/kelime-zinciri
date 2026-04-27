@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelime Zinciri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Kelime Zinciri</h1>
+
+        <div class="scoreboard">
+            <div class="score player-1-score">
+                <span class="score-label">Oyuncu 1</span>
+                <span class="score-value" id="score-p1">0</span>
+                <span class="mood-emoji" id="mood-p1"></span>
+            </div>
+            <div class="score-divider">vs</div>
+            <div class="score player-2-score">
+                <span class="score-label">Oyuncu 2</span>
+                <span class="score-value" id="score-p2">0</span>
+                <span class="mood-emoji" id="mood-p2"></span>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <div class="round-counter">Tur: <span id="round">1</span>/<span id="max-rounds">5</span></div>
+            <div id="timer" class="timer hidden">Süre: <span id="time-left">30</span>s</div>
+        </div>
+
+        <div class="game-area">
+            <div class="player-indicator">
+                Oyuncu: <span id="current-player">Oyuncu 1</span>
+            </div>
+
+            <div class="instruction">
+                <span id="instruction-text">Bir kelime girin</span>
+                <span id="required-letter" class="required-letter"></span>
+            </div>
+            <div class="score-note">Mastar eki (-mak/-mek) puana dahil değildir.</div>
+
+            <div class="input-area">
+                <input type="text" id="word-input" placeholder="Kelime girin..." autocomplete="off">
+                <button id="submit-btn">Gönder</button>
+            </div>
+
+            <div id="message" class="message"></div>
+            <div id="spelling-note" class="spelling-note"></div>
+        </div>
+
+        <div class="history-area">
+            <h3>Kelime Geçmişi</h3>
+            <ul id="word-history"></ul>
+        </div>
+
+        <div id="game-over" class="game-over hidden">
+            <div id="medal" class="medal hidden">🥇</div>
+            <h2 id="game-over-title">Oyun Bitti!</h2>
+            <p id="game-over-message">Tebrikler!</p>
+            <button id="restart-btn">Yeniden Oyna</button>
+        </div>
+
+        <div id="mode-modal" class="modal">
+            <div class="modal-content mode-content">
+                <h3>Hangi modda oynamak istersiniz?</h3>
+                <div class="mode-options">
+                    <button class="mode-choice" data-mode="klasik">
+                        <span class="mode-choice-icon">🧩</span>
+                        <span class="mode-choice-title">Klasik</span>
+                    </button>
+                    <button class="mode-choice" data-mode="zamanlı">
+                        <span class="mode-choice-icon">⏱</span>
+                        <span class="mode-choice-title">Zamanlı</span>
+                    </button>
+                </div>
+                <button id="rules-open" class="rules-open-btn">📘 Oyunun kuralları</button>
+            </div>
+        </div>
+
+        <div id="rules-modal" class="modal hidden">
+            <div class="modal-content rules-content">
+                <h3>Oyunun kuralları</h3>
+                <ul class="rules-list">
+                    <li>İlk harfi oyun söyler.</li>
+                    <li>Sıradaki oyuncu o harfle başlayan bir kelime yazar.</li>
+                    <li>Sonraki kelime, önceki kelimenin son harfiyle başlamalıdır.</li>
+                    <li>Aynı kelimeyi ikinci kez kullanamazsın.</li>
+                    <li>Kelime doğruysa, harf sayısı kadar puan alırsın.</li>
+                    <li>Fiillerdeki -mak ve -mek puan sayılmaz.</li>
+                    <li>Puanlar eşitse oyun berabere biter.</li>
+                </ul>
+                <button id="rules-close">Anladım</button>
+            </div>
+        </div>
+
+        <div id="time-limit-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Süre Limiti</h3>
+                <p>Limit kaç saniye olsun?</p>
+                <input type="number" id="time-limit-input" value="15" min="1" max="120">
+                <button id="time-limit-confirm">Başla</button>
+            </div>
+        </div>
+
+        <div id="rounds-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Tur Sayısı</h3>
+                <p>Her oyuncu kaç kere oynayacak?</p>
+                <input type="number" id="rounds-input" value="5" min="1" max="50">
+                <button id="rounds-confirm">Devam</button>
+            </div>
+        </div>
+
+        <div id="player-names-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Oyuncu İsimleri</h3>
+                <div class="name-input-group">
+                    <label for="player1-name">Oyuncu 1:</label>
+                    <input type="text" id="player1-name" placeholder="İsim girin..." maxlength="15">
+                </div>
+                <div class="name-input-group">
+                    <label for="player2-name">Oyuncu 2:</label>
+                    <input type="text" id="player2-name" placeholder="İsim girin..." maxlength="15">
+                </div>
+                <button id="names-confirm">Oyuna Başla</button>
+            </div>
+        </div>
+
+        <footer class="game-credit">Ç. Üzüm &amp; B. E. Üzüm | Hamburg | 2026</footer>
+    </div>
+
+    <script src="turkish-words.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
