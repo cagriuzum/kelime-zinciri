@@ -60,7 +60,7 @@ Türkçe kelime listesi: https://github.com/CanNuhlar/Turkce-Kelime-Listesi
 
 Oyunun kendi kodu MIT Lisansı ile paylaşılmıştır. Detaylar için `LICENSE` dosyasına bakabilirsiniz.
 
-Türkçe kelime listesi yukarıdaki kaynaktan alınmıştır. Bu kaynak depoda şu anda açık bir lisans belirtilmemiştir. Bu yüzden MIT Lisansı, `turkce_kelime_listesi.txt` dosyasını ve ondan üretilen `turkish-words.js` dosyasını kapsamaz.
+Türkçe kelime listesi yukarıdaki kaynaktan alındı. Bu kaynak için depoda şu anda açık bir lisans belirtilmemiş. Bu yüzden MIT Lisansı, `turkce_kelime_listesi.txt` dosyasını ve ondan üretilen `turkish-words.js` dosyasını kapsamaz.
 
 ---
 
